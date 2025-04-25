@@ -1,12 +1,12 @@
 const jwt = require('jsonwebtoken');
-
 const SECRET = 'slaptazodis';
 
 exports.authenticateToken = (req, res, next) => {
-  const token = req.headers['authorization'];
-  if (!token) return res.sendStatus(401);
+  const authHeader = req.headers['authorization'];
+  if (!authHeader) return res.sendStatus(401);
 
-  jwt.verify(token.split(' ')[1], SECRET, (err, user) => {
+  const token = authHeader.split(' ')[1];
+  jwt.verify(token, SECRET, (err, user) => {
     if (err) return res.sendStatus(403);
     req.user = user;
     next();
