@@ -14,9 +14,9 @@ function ItemList() {
   }, []);
 
   return (
-    <div className="p-3">
+    <div>
       {items.map(item => (
-        <div key={item.id} className="border p-2 mb-2">
+        <div key={item.id} className="card mb-2 p-2">
           <h5>{item.name}</h5>
           <p>{item.description}</p>
         </div>

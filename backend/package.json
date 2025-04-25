@@ -3,20 +3,17 @@
   "version": "1.0.0",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node app.js",
+    "generate-cert": "set OPENSSL_CONF=NUL && openssl req -new -x509 -newkey rsa:2048 -keyout ./cert/key.pem -out ./cert/cert.pem -days 365 -nodes -subj \"/CN=localhost\""
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "description": "",
   "dependencies": {
-    "bcryptjs": "^3.0.2",
-    "body-parser": "^2.2.0",
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.20.2",
     "cors": "^2.8.5",
-    "express": "^5.1.0",
+    "express": "^4.18.2",
     "fs": "^0.0.1-security",
-    "helmet": "^8.1.0",
+    "helmet": "^7.0.0",
     "https": "^1.0.0",
-    "jsonwebtoken": "^9.0.2"
+    "jsonwebtoken": "^9.0.0"
   }
 }
