@@ -1,0 +1,22 @@
+# Node.js ir npm failai
+node_modules/
+npm-debug.log
+yarn-debug.log
+yarn-error.log
+pnpm-debug.log
+
+# Sertifikatų failai
+backend/cert/
+
+# React ir Vite build failai
+frontend/dist/
+
+# Sisteminiai failai
+.DS_Store
+Thumbs.db
+
+# VSCode nustatymai (jei naudoji)
+.vscode/
+
+# aplanko aplankų istorija (Windows)
+*.log
