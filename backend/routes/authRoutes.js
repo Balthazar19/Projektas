@@ -3,6 +3,7 @@ const router = express.Router();
 const fs = require('fs');
 const path = require('path');
 const jwt = require('jsonwebtoken');
+const { authenticateToken } = require('../middleware/authMiddleware');
 
 const usersPath = path.join(__dirname, '../data/users.json');
 const SECRET = 'slaptazodis';
@@ -29,8 +30,8 @@ router.post('/register', (req, res) => {
     const newUser = { id: Date.now(), email, password };
     users.push(newUser);
     writeUsers(users);
-    const token = jwt.sign({ id: newUser.id, email: newUser.email }, SECRET, { expiresIn: '1h' });
-    res.status(201).json({ token });
+    const token = jwt.sign({ id: newUser.id }, SECRET, { expiresIn: '1h' });
+    res.status(201).json({ token, email: newUser.email });
 });
 
 // Prisijungimas
@@ -41,8 +42,25 @@ router.post('/login', (req, res) => {
     if (!user) {
         return res.status(401).json({ error: 'Neteisingi duomenys' });
     }
-    const token = jwt.sign({ id: user.id, email: user.email }, SECRET, { expiresIn: '1h' });
-    res.json({ token });
+    const token = jwt.sign({ id: user.id }, SECRET, { expiresIn: '1h' });
+    res.json({ token, email: user.email });
+});
+
+router.patch('/update', authenticateToken, (req, res) => {
+    const { email, password } = req.body;
+    const users = readUsers();
+    const user = users.find(u => u.id === req.user.id);
+
+    if (!user) {
+        return res.status(404).json({ error: 'Vartotojas nerastas' });
+    }
+
+    if (email) user.email = email;
+    if (password) user.password = password;
+
+    writeUsers(users);
+
+    res.json({ message: 'Profilis atnaujintas', email: user.email });
 });
 
 module.exports = router;

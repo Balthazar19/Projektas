@@ -1,11 +1,13 @@
 # Prekių valdymo sistema
 
 Šis projektas yra mažas React + Node.js Express web app, kuris leidžia:
-
+- Registruotis ir prisijungti vartotojams
 - Matyti prekių sąrašą
 - Pridėti naujas prekes
-- Atnaujinti prekes
+- Redaguoti prekes
 - Ištrinti prekes
+- Redaguoti vartotojo profilį (el. paštą ir slaptažodį)
+- Atsijungti nuo paskyros
 - Visa komunikacija vyksta per apsaugotą HTTPS ryšį su JWT token autorizacija
 - Duomenys saugomi JSON faile (`items.json`)
 
@@ -32,7 +34,17 @@ npm start
 
 Backend serveris pasileis adresu: https://localhost:3001
 
-API prieiga: https://localhost:3001/api/items
+API endpointai:
+
+- `POST /api/auth/register` - vartotojo registracija
+- `POST /api/auth/login` - vartotojo prisijungimas
+- `GET /api/auth/userinfo` - vartotojo informacijos gavimas
+- `PATCH /api/auth/update` - vartotojo profilio atnaujinimas
+- `GET /api/items` - gauti visas prekes
+- `POST /api/items` - pridėti naują prekę
+- `PUT /api/items/:id` - atnaujinti prekę
+- `PATCH /api/items/:id` - iš dalies atnaujinti prekę
+- `DELETE /api/items/:id` - ištrinti prekę
 
 > **Pastaba:** Kadangi naudojamas savarankiškas sertifikatas, naršyklė gali rodyti "Not secure" (tai normalu lokaliai).
 
@@ -64,16 +76,24 @@ Frontend atsidarys adresu: http://localhost:5174 (arba kitu, jei 5173 jau užimt
 - Node.js
 - Express
 - HTTPS
-- JWT (fake token autorizacija)
+- JWT autorizacija
 - CORS
 - Helmet
+- JSON failai kaip duomenų saugykla
+
+## Funkcionalumai
+- Registracija / Prisijungimas
+- Prekių sąrašo peržiūra
+- Prekės sukūrimas, atnaujinimas, trynimas
+- Profilio redagavimas (el. paštas ir slaptažodis)
+- Automatinis logout jei tokenas pasibaigia
+- Responsive dizainas (prisitaikymas įvairiems įrenginiams)
 
 ## Svarbios pastabos
+- API užklausos reikalauja `Authorization: Bearer <token>` ir `CustomValue` antraščių
 
-- Kiekviena API užklausa privalo turėti Authorization: Bearer token antraštę ir CustomValue antraštę
+- Visi vartotojų įvedami duomenys validuojami serveryje
 
-- Visi duomenys tikrinami (validuojami) serveryje
+- Vartotojų ir prekių duomenys saugomi JSON failuose (`users.json`, `items.json`)
 
-- Failas items.json saugo visas prekes (nėra duomenų bazės)
-
-- HTTPS sertifikatas sukurtas lokaliai naudojant openssl
+- HTTPS ryšys su savarankišku sertifikatu (`cert.pem`, `key.pem`)
