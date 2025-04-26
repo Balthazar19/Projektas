@@ -18,5 +18,20 @@
     "id": 1745624878518,
     "email": "zxc@zxc",
     "password": "zxc"
+  },
+  {
+    "id": 1745625353420,
+    "email": "eitminas@gmail.com",
+    "password": "123"
+  },
+  {
+    "id": 1745625434361,
+    "email": "Edgaras@gmail.com",
+    "password": "123"
+  },
+  {
+    "id": 1745626165545,
+    "email": "paulius@gmail.com",
+    "password": "123"
   }
 ]
