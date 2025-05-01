@@ -52,6 +52,11 @@
   {
     "id": 1746123200337,
     "email": "asdsad@asd",
-    "hashedPassword": "$2a$10$GeeJceQtp7Pg8vD4DXgO0OfsHj.a62.a2yoM8eq73zr.lS9WuAvLe"
+    "password": "$2a$10$GeeJceQtp7Pg8vD4DXgO0OfsHj.a62.a2yoM8eq73zr.lS9WuAvLe"
+  },
+  {
+    "id": 1746135713410,
+    "email": "zxc@zxczxc",
+    "password": "$2a$10$OvZeJPpAm/zlROt9d.0h0uUqc14l9ZqySVykB0bGMAApKC5F3n7Di"
   }
 ]

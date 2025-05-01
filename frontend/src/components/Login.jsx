@@ -14,17 +14,23 @@ function Login({ onLogin }) {
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({ email, password }),
             });
-            const data = await res.json();
-            if (res.ok) {
-                onLogin(data);
-                navigate("/");
-            } else {
-                alert(data.error || "Nepavyko prisijungti");
+
+            const contentType = res.headers.get("content-type");
+            const isJson = contentType && contentType.includes("application/json");
+            const data = isJson ? await res.json() : {};
+
+            if (!res.ok) {
+                throw new Error(data.message || data.error || "Prisijungimas nepavyko");
             }
+
+            onLogin(data); // token + email
+            navigate("/");
         } catch (err) {
             console.error("Prisijungimo klaida:", err);
+            alert(err.message || "Nepavyko prisijungti. Bandykite vėliau.");
         }
     };
+
 
     return (
         <div className="d-flex justify-content-center align-items-center vh-100">
