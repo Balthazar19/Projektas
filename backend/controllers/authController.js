@@ -35,9 +35,9 @@ exports.register = (req, res) => {
     users.push(newUser);
     writeUsers(users);
 
-    const token = jwt.sign({ id: newUser.id, email: newUser.email }, SECRET, { expiresIn: '1h' });
-    res.status(201).json({ token, email: newUser.email });
+    res.status(201).json({ message: 'Vartotojas sėkmingai sukurtas. Prisijunk, kad tęstum.' });
 };
+
 
 exports.login = (req, res) => {
     const { email, password } = req.body;
