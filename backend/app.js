@@ -24,5 +24,5 @@ app.use((req, res) => {
 });
 
 https.createServer(httpsOptions, app).listen(PORT, () => {
-  console.log(`✅ HTTPS Server veikia https://localhost:${PORT}`);
+  console.log(`HTTPS Server veikia https://localhost:${PORT}`);
 });

@@ -7,7 +7,7 @@
   {
     "id": 1745623893122,
     "email": "asd@asd",
-    "password": "asd"
+    "password": "asdasd"
   },
   {
     "id": 1745624786488,
@@ -33,5 +33,25 @@
     "id": 1745626165545,
     "email": "paulius@gmail.com",
     "password": "123"
+  },
+  {
+    "id": 1746122612608,
+    "email": "asd@asddas",
+    "password": "asdasd"
+  },
+  {
+    "id": 1746122664740,
+    "email": "asd@dasadsad",
+    "password": "asdasd"
+  },
+  {
+    "id": 1746122745094,
+    "email": "zxccxcx@das",
+    "password": "zcxcxz"
+  },
+  {
+    "id": 1746123200337,
+    "email": "asdsad@asd",
+    "hashedPassword": "$2a$10$GeeJceQtp7Pg8vD4DXgO0OfsHj.a62.a2yoM8eq73zr.lS9WuAvLe"
   }
 ]

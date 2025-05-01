@@ -27,7 +27,8 @@ exports.register = (req, res) => {
     }
 
     const hashedPassword = bcrypt.hashSync(password, 10);
-    const newUser = { id: Date.now(), email, password: hashedPassword };
+    console.log('Hashed password :' + hashedPassword);
+    const newUser = { id: Date.now(), email: email, password: hashedPassword };
     users.push(newUser);
     writeUsers(users);
 

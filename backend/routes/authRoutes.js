@@ -4,6 +4,7 @@ const fs = require('fs');
 const path = require('path');
 const jwt = require('jsonwebtoken');
 const { authenticateToken } = require('../middleware/authMiddleware');
+const bcrypt = require("bcryptjs");
 
 const usersPath = path.join(__dirname, '../data/users.json');
 const SECRET = 'slaptazodis';
@@ -27,7 +28,8 @@ router.post('/register', (req, res) => {
     if (users.find(u => u.email === email)) {
         return res.status(400).json({ error: 'Vartotojas jau egzistuoja' });
     }
-    const newUser = { id: Date.now(), email, password };
+    const hashedPassword = bcrypt.hashSync(password, 10);
+    const newUser = { id: Date.now(), email, hashedPassword };
     users.push(newUser);
     writeUsers(users);
     const token = jwt.sign({ id: newUser.id }, SECRET, { expiresIn: '1h' });
