@@ -29,6 +29,7 @@ function App() {
   const handleLogin = (userData) => {
     setUser({ token: userData.token, email: userData.email });
   };
+  console.log(user);
 
   const handleLogout = () => {
     setUser(null);

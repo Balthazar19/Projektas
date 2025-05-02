@@ -42,7 +42,6 @@ API endpointai:
 - `PATCH /api/auth/update` - vartotojo profilio atnaujinimas
 - `GET /api/items` - gauti visas prekes
 - `POST /api/items` - pridėti naują prekę
-- `PUT /api/items/:id` - atnaujinti prekę
 - `PATCH /api/items/:id` - iš dalies atnaujinti prekę
 - `DELETE /api/items/:id` - ištrinti prekę
 
@@ -87,10 +86,9 @@ Frontend atsidarys adresu: http://localhost:5174 (arba kitu, jei 5173 jau užimt
 - Prekės sukūrimas, atnaujinimas, trynimas
 - Profilio redagavimas (el. paštas ir slaptažodis)
 - Automatinis logout jei tokenas pasibaigia
-- Responsive dizainas (prisitaikymas įvairiems įrenginiams)
 
 ## Svarbios pastabos
-- API užklausos reikalauja `Authorization: Bearer <token>` ir `CustomValue` antraščių
+- API užklausos reikalauja `Authorization: Bearer <token>` antraščių
 
 - Visi vartotojų įvedami duomenys validuojami serveryje
 
