@@ -6,7 +6,6 @@ const { validateItem } = require('../middleware/validateMiddleware');
 
 router.get('/', authenticateToken, getItems);
 router.post('/', authenticateToken, validateItem, createItem);
-router.put('/:id', authenticateToken, validateItem, updateItem);
 router.patch('/:id', authenticateToken, patchItem);
 router.delete('/:id', authenticateToken, deleteItem);
 

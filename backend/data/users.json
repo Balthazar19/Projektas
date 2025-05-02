@@ -1,55 +1,5 @@
 [
   {
-    "id": 1745623825677,
-    "email": "sdf#@fsdf",
-    "password": "sdf"
-  },
-  {
-    "id": 1745623893122,
-    "email": "asd@asd",
-    "password": "asdasd"
-  },
-  {
-    "id": 1745624786488,
-    "email": "fdsf@fdased",
-    "password": "dasd"
-  },
-  {
-    "id": 1745624878518,
-    "email": "zxc@zxc",
-    "password": "zxc"
-  },
-  {
-    "id": 1745625353420,
-    "email": "eitminas@gmail.com",
-    "password": "123"
-  },
-  {
-    "id": 1745625434361,
-    "email": "edgaras@gmail.com",
-    "password": "123"
-  },
-  {
-    "id": 1745626165545,
-    "email": "paulius@gmail.com",
-    "password": "123"
-  },
-  {
-    "id": 1746122612608,
-    "email": "asd@asddas",
-    "password": "asdasd"
-  },
-  {
-    "id": 1746122664740,
-    "email": "asd@dasadsad",
-    "password": "asdasd"
-  },
-  {
-    "id": 1746122745094,
-    "email": "zxccxcx@das",
-    "password": "zcxcxz"
-  },
-  {
     "id": 1746123200337,
     "email": "asdsad@asd",
     "password": "$2a$10$GeeJceQtp7Pg8vD4DXgO0OfsHj.a62.a2yoM8eq73zr.lS9WuAvLe"
@@ -58,5 +8,10 @@
     "id": 1746135713410,
     "email": "zxc@zxczxc",
     "password": "$2a$10$OvZeJPpAm/zlROt9d.0h0uUqc14l9ZqySVykB0bGMAApKC5F3n7Di"
+  },
+  {
+    "id": 1746159340953,
+    "email": "eitminas@gmail.com",
+    "password": "$2a$10$zEnpcg6BrTAIhbbRDV9xEOi97WgHN2V8mEpt5QOneo4o8NVk7rDFe"
   }
 ]
