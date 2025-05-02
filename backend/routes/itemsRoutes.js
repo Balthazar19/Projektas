@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const { authenticateToken } = require('../middleware/authMiddleware');
-const { getItems, createItem, updateItem, patchItem, deleteItem } = require('../controllers/itemsController');
+const { getItems, createItem, patchItem, deleteItem } = require('../controllers/itemsController');
 const { validateItem } = require('../middleware/validateMiddleware');
 
 router.get('/', authenticateToken, getItems);
