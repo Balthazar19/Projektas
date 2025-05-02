@@ -9,7 +9,7 @@ router.post('/register', authController.register);
 // Prisijungimas
 router.post('/login', authController.login);
 
-// Profilio atnaujinimas (jei reikalingas)
-router.patch('/update', authenticateToken, authController.update); // jei turi update logiką
+// Profilio atnaujinimas
+router.patch('/update', authenticateToken, authController.update);
 
 module.exports = router;
