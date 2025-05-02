@@ -27,19 +27,6 @@ exports.createItem = (req, res) => {
   res.status(201).json(newItem);
 };
 
-exports.updateItem = (req, res) => {
-  const { id } = req.params;
-  const items = readData();
-  const index = items.findIndex(item => item.id == id && item.userId === req.user.id);
-  if (index !== -1) {
-    items[index] = { ...items[index], ...req.body };
-    writeData(items);
-    res.json(items[index]);
-  } else {
-    res.status(404).send('Item not found');
-  }
-};
-
 exports.patchItem = (req, res) => {
   const { id } = req.params;
   const items = readData();
